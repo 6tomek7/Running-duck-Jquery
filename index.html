@@ -16,7 +16,6 @@
 
     <script>
       $(document).ready(function () {
-
           let score = 0;
 
           function createObstacle() {
@@ -29,21 +28,11 @@
               });
           }
 
-          function createCoin() {
-              let coin = $('<div class="coin"></div>');
-              let coinHeight = Math.random() * 100 + 50;
-              $('#game-container').append(coin);
-              coin.css({ right: '-50px', bottom: coinHeight + 'px' });
-
-              coin.animate({ right: '100vw' }, 3000, 'linear', function () {
-                  $(this).remove();
-              });
-          }
-
           setInterval(createObstacle, 1000);
-          setInterval(createCoin, 500);
+        
       });
     </script>
     <script src="js/duck.js"></script>
+    <script src="js/coin.js"></script>
   </body>
 </html>
