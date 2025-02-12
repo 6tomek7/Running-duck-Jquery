@@ -8,34 +8,18 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <audio id="coin-sound" src="assets/coin-257878.mp3" preload="auto"></audio>
-    <audio id="quacking-sound" src="assets/quacking.mp3" preload="auto"></audio>
-    
     <h1>Running Duck Game</h1>
     <p>Score: <span id="score">0</span></p>
     <div id="game-container">
       <img id="duck" src="assets/duck_1.png"></img>
     </div>
-    <script>
-      $(document).ready(function () {
-          let score = 0;
-
-          function createObstacle() {
-              let obstacle = $('<div class="obstacle"></div>');
-              $('#game-container').append(obstacle);
-              obstacle.css('right', '-50px');
-
-              obstacle.animate({ right: '100vw' }, 3000, 'linear', function () {
-                  $(this).remove();
-              });
-          }
-
-          setInterval(createObstacle, 1000);
-        
-      });
-    </script>
+    
     <script src="js/duck.js"></script>
     <script src="js/coin.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/obstacle.js"></script>
+    
+    <audio id="coin-sound" src="assets/coin-257878.mp3" preload="auto"></audio>
+    <audio id="quacking-sound" src="assets/quacking.mp3" preload="auto"></audio>
   </body>
 </html>
