@@ -13,6 +13,7 @@ function checkCollisionWithCoin(coin) {
     coin.remove();
     score++;
     $("#score").text(score);
+    $("#coin-sound")[0].play();
   }
 }
 
