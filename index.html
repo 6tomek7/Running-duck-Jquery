@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
+    <audio id="coin-sound" src="assets/coin-257878.mp3" preload="auto"></audio>
+    <audio id="quacking-sound" src="assets/quacking.mp3" preload="auto"></audio>
+    
     <h1>Running Duck Game</h1>
     <p>Score: <span id="score">0</span></p>
     <div id="game-container">
       <img id="duck" src="assets/duck_1.png"></img>
     </div>
-    <audio id="coin-sound" src="assets/coin-257878.mp3" preload="auto"></audio>
     <script>
       $(document).ready(function () {
           let score = 0;

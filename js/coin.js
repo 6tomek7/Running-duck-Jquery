@@ -9,6 +9,3 @@ function createCoin() {
   });
   return coin;
 }
-function test() {
-  return "test";
-}
