@@ -11,24 +11,13 @@
     <h1>Running Duck Game</h1>
     <p>Score: <span id="score">0</span></p>
     <div id="game-container">
-      <div id="duck"></div>
+      <img id="duck" src="assets/duck_1.png"></img>
     </div>
 
     <script>
       $(document).ready(function () {
-          let isJumping = false;
-          let score = 0;
 
-          $(document).keydown(function (event) {
-              if (event.key === ' ' && !isJumping) {
-                  isJumping = true;
-                  $('#duck').animate({ bottom: '100px' }, 300, function () {
-                      $('#duck').animate({ bottom: '10px' }, 300, function () {
-                          isJumping = false;
-                      });
-                  });
-              }
-          });
+          let score = 0;
 
           function createObstacle() {
               let obstacle = $('<div class="obstacle"></div>');
@@ -51,9 +40,10 @@
               });
           }
 
-          setInterval(createObstacle, 2000);
-          setInterval(createCoin, 5000);
+          setInterval(createObstacle, 1000);
+          setInterval(createCoin, 500);
       });
     </script>
+    <script src="js/duck.js"></script>
   </body>
 </html>
