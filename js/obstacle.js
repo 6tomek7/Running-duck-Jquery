@@ -1,11 +1,13 @@
 let obstacleTimeout;
 let obstacleInterval;
+let travelTimeObstacles = [2000, 1600, 1300];
+let timeDiversorObstacles = [1, 1.1, 1.2];
 
 function createObstacle() {
   let obstacle = $('<img id="obstacle" class="obstacle" src="assets/cactus.png"></img>');
   $("#game-container").append(obstacle);
 
-  obstacle.animate({ right: "100vw" }, 2000, "linear", function () {
+  obstacle.animate({ right: "100vw" }, travelTimeObstacles[$("#level").text() - 1], "linear", function () {
     $(this).remove();
   });
 
@@ -40,7 +42,7 @@ function generateAndCheckCollisionWithObstacle() {
     }, 50);
 
     generateAndCheckCollisionWithObstacle();
-  }, randomTime);
+  }, randomTime / timeDiversorObstacles[$("#level").text() - 1]);
 }
 
 function stopGenerateObstacle() {

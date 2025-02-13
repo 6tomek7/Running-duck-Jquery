@@ -42,9 +42,11 @@ function setLevel() {
   if (score <= 30) {
     $("#level").text(1);
   } else if (score > 30 && score <= 60) {
+    score === 31 && $("#next-level-sound")[0].play();
     $("#level").text(2);
   } else if (score > 60 && score < 100) {
     $("#level").text(3);
+    score === 61 && $("#next-level-sound")[0].play();
   } else {
     winGame();
   }

@@ -2,7 +2,7 @@ let coinTimeout;
 let coinInterval;
 function createCoin() {
   let coin = $('<img id="coin" class="coin" src="assets/coin.png"></img>');
-  let coinHeight = Math.random() * 100 + 50;
+  let coinHeight = Math.random() * 120 + 50;
   $("#game-container").append(coin);
   coin.css({ right: "-50px", bottom: coinHeight + "px" });
 
@@ -30,7 +30,7 @@ function checkCollisionWithCoin(coin) {
   }
 }
 function generateAndCheckCollisionWithCoin() {
-  let randomTime = Math.floor(Math.random() * (1200 - 800 + 1)) + 800;
+  let randomTime = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
 
   coinTimeout = setTimeout(() => {
     const coin = createCoin();
