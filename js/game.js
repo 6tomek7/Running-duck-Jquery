@@ -47,5 +47,4 @@ function setLevel() {
 
 $(document).ready(() => {
   startGame();
-  resetGame();
 });
