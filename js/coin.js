@@ -28,15 +28,17 @@ function checkCollisionWithCoin(coin) {
     $("#coin-sound")[0].play();
   }
 }
-
 function generateAndCheckCollisionWithCoin() {
   let randomTime = Math.floor(Math.random() * (1200 - 800 + 1)) + 800;
 
   coinTimeout = setTimeout(() => {
     const coin = createCoin();
+
     coinInterval = setInterval(() => {
       checkCollisionWithCoin(coin);
     }, 50);
+
+    generateAndCheckCollisionWithCoin();
   }, randomTime);
 }
 

@@ -4,7 +4,6 @@ let obstacleInterval;
 function createObstacle() {
   let obstacle = $('<img id="obstacle" class="obstacle" src="assets/cactus.png"></img>');
   $("#game-container").append(obstacle);
-  obstacle.css("right", "-50px");
 
   obstacle.animate({ right: "100vw" }, 2000, "linear", function () {
     $(this).remove();
@@ -36,11 +35,16 @@ function generateAndCheckCollisionWithObstacle() {
 
   obstacleTimeout = setTimeout(() => {
     const obstacle = createObstacle();
+
     obstacleInterval = setInterval(() => {
       checkCollisionWithObstacle(obstacle);
     }, 50);
+
+    generateAndCheckCollisionWithObstacle();
   }, randomTime);
 }
+
+function test() {}
 
 function stopGenerateObstacle() {
   clearInterval(obstacleInterval);
