@@ -22,8 +22,7 @@ function checkCollisionWithObstacle(obstacle) {
     duck.top < obstacleRect.bottom &&
     duck.bottom > obstacleRect.top
   ) {
-    obstacle.stop();
-    $("#game-over-sound")[0].play();
+    loseGame();
     setTimeout(() => {
       obstacle.remove();
     }, 1850);
@@ -43,8 +42,6 @@ function generateAndCheckCollisionWithObstacle() {
     generateAndCheckCollisionWithObstacle();
   }, randomTime);
 }
-
-function test() {}
 
 function stopGenerateObstacle() {
   clearInterval(obstacleInterval);

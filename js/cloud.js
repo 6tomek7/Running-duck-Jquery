@@ -1,3 +1,4 @@
+let cloudInterval;
 function createCloud() {
   let cloud = chooseRandomCloud();
   $("#game-container").append(cloud);
@@ -22,7 +23,7 @@ function initialClouds() {
     });
   });
 
-  setInterval(() => {
+  cloudInterval = setInterval(() => {
     createCloud();
   }, 12000);
 }
@@ -36,4 +37,8 @@ function chooseRandomCloud() {
 
   const index = Math.floor(Math.random() * 3);
   return clouds[index];
+}
+
+function stopGenerateCloud() {
+  clearInterval(cloudInterval);
 }

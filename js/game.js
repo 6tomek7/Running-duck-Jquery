@@ -19,6 +19,17 @@ function pauseGame() {
   });
 }
 
+function loseGame() {
+  $(".obstacle").stop();
+  $(".coin").stop();
+  $(".cloud").stop();
+  $(".duck").stop();
+  stopGenerateObstacle();
+  stopGenerateCoins();
+  stopGenerateCloud();
+  $("#game-over-sound")[0].play();
+}
+
 $(document).ready(() => {
   startGame();
 });
