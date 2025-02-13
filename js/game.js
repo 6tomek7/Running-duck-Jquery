@@ -1,9 +1,11 @@
 let score = 0;
 let obstacleTravelTime = [1500, 1000, 800];
 let coinTravelTime = [2000, 1600, 1200];
+let isPlaying = false;
 
 function startGame() {
   $("#play-button").click(() => {
+    isPlaying = true;
     $("#play-button").remove();
     initialClouds();
     generateAndCheckCollisionWithCoin();
@@ -26,6 +28,7 @@ function endGame() {
   stopGenerateObstacle();
   stopGenerateCoins();
   stopGenerateCloud();
+  isPlaying = false;
 }
 
 function loseGame() {

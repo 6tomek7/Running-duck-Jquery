@@ -21,7 +21,7 @@ function jump() {
 
 $(document).ready(() => {
   $(document).keydown(function (event) {
-    if (event.key === " " || event.key === "ArrowUp") {
+    if ((isPlaying && event.key === " ") || event.key === "ArrowUp") {
       jump();
     }
   });
