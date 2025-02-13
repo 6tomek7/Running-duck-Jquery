@@ -1,27 +1,23 @@
 let score = 0;
+let lvl = 1;
+let obstacleTravelTime = [1500, 1000, 800];
+let coinTravelTime = [2000, 1600, 1200];
 
-function checkCollisionWithCoin(coin) {
-  const duck = $("#duck")[0].getBoundingClientRect();
-  const coinRect = coin[0].getBoundingClientRect();
+function startGame() {
+  $("#play-button").click(() => {
+    generateAndCheckCollisionWithCoin();
+    generateAndCheckCollisionWithObstacle();
+  });
+}
 
-  if (
-    duck.left < coinRect.right &&
-    duck.right > coinRect.left &&
-    duck.top < coinRect.bottom &&
-    duck.bottom > coinRect.top
-  ) {
-    coin.remove();
-    score++;
-    $("#score").text(score);
-    $("#coin-sound")[0].play();
-  }
+function pauseGame() {
+  $("#pause-button").click(() => {
+    $(".coin").stop();
+    $(".obstacle").stop();
+  });
 }
 
 $(document).ready(() => {
-  setInterval(() => {
-    const coin = createCoin();
-    setInterval(() => {
-      checkCollisionWithCoin(coin);
-    }, 50);
-  }, 2000);
+  startGame();
+  // pauseGame();
 });
