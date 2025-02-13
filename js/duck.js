@@ -9,8 +9,10 @@ function jump() {
     isJumping = true;
 
     playQuack();
+    $("#duck").attr("src", "assets/duck_jump.png");
     $("#duck").animate({ bottom: "150px" }, 400, function () {
       $("#duck").animate({ bottom: "10px" }, 300, function () {
+        $("#duck").attr("src", "assets/duck_1.png");
         isJumping = false;
       });
     });
