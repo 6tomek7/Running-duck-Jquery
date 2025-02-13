@@ -9,10 +9,13 @@
   </head>
   <body>
     <h1>Running Duck Game</h1>
-    <p>Score: <span id="score">0</span></p>
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
     <div id="game-container">
-        <button id="play-button">Play</button>
-        <button id="pause-button">Pause</button>
+      <div class="top-bar">
+        <p>Score: <span id="score">0</span></p>
+        <p>Level: <span id="level">1</span></p>
+      </div>
         <img id="duck" class="duck" src="assets/duck_1.png"></img>
         <img id="speakerIcon" src="assets/unmute.png" alt="Unmute">
         <div class="floor"></div>
@@ -28,5 +31,6 @@
     <audio id="coin-sound" src="assets/coin-257878.mp3" preload="auto"></audio>
     <audio id="quacking-sound" src="assets/quacking.mp3" preload="auto"></audio>
     <audio id="game-over-sound" src="assets/videogame-death-sound-43894.mp3" preload="auto"></audio>
+    <audio id="win-game-sound" src="assets/win_game.mp3" preload="auto"></audio>
   </body>
 </html>

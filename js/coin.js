@@ -24,6 +24,7 @@ function checkCollisionWithCoin(coin) {
   ) {
     coin.remove();
     score++;
+    setLevel();
     $("#score").text(score);
     $("#coin-sound")[0].play();
   }

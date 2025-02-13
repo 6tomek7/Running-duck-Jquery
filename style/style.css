@@ -58,3 +58,12 @@ img {
   position: relative;
   z-index: 2;
 }
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.top-bar > p {
+  margin: 0 10px 0 10px;
+}
