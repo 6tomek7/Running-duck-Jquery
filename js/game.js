@@ -13,18 +13,8 @@ function startGame() {
   });
 }
 
-function pauseGame() {
-  $("#pause-button").click(() => {
-    $(".coin").stop();
-    $(".obstacle").stop();
-  });
-}
-
 function endGame() {
-  $(".obstacle").stop();
-  $(".coin").stop();
-  $(".cloud").stop();
-  $(".duck").stop();
+  $(".obstacle, .coin, .cloud, .duck").stop();
   stopGenerateObstacle();
   stopGenerateCoins();
   stopGenerateCloud();
@@ -57,4 +47,5 @@ function setLevel() {
 
 $(document).ready(() => {
   startGame();
+  resetGame();
 });
