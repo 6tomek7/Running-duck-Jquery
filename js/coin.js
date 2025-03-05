@@ -26,8 +26,13 @@ function checkCollisionWithCoin(coin) {
     score++;
     setLevel();
     $("#score").text(score);
-    $("#coin-sound")[0].play();
+    playCoinSound();
   }
+}
+
+function playCoinSound() {
+  let sound = new Audio("assets/coin-257878.mp3");
+  sound.play();
 }
 function generateAndCheckCollisionWithCoin() {
   let randomTime = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
