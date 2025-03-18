@@ -32,7 +32,7 @@ function checkCollisionWithCoin(coin) {
 
 function playCoinSound() {
   let sound = new Audio("assets/coin-257878.mp3");
-  sound.play();
+  !audioMuted && sound.play();
 }
 function generateAndCheckCollisionWithCoin() {
   let randomTime = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
