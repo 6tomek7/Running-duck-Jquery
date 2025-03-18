@@ -1,4 +1,4 @@
-let score = 0;
+let score;
 let obstacleTravelTime = [1500, 1000, 800];
 let coinTravelTime = [2000, 1600, 1200];
 let isPlaying = false;
@@ -6,6 +6,7 @@ let isPlaying = false;
 function startGame() {
   $("#play-button").click(() => {
     initialDuck();
+    setInitalValues();
     isPlaying = true;
     $("#play-button").hide();
     initialClouds();
@@ -25,6 +26,12 @@ function endGame() {
     removeGeneratedImages();
     $("#play-button").show();
   }, 2000);
+}
+
+function setInitalValues() {
+  score = 0;
+  $("#level").text(1);
+  $("#score").text(score);
 }
 
 function removeGeneratedImages() {
