@@ -16,7 +16,7 @@ function initialClouds() {
     cloud.css({ right: position + "%" });
 
     let distance = $(window).width() - (position / 100) * $(window).width();
-    let speed = (distance / $(window).width()) * 36000; // Scale speed
+    let speed = (distance / $(window).width()) * 36000;
 
     cloud.animate({ right: "100vw" }, speed, "linear", function () {
       cloud.remove();

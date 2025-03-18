@@ -5,8 +5,9 @@ let isPlaying = false;
 
 function startGame() {
   $("#play-button").click(() => {
+    initialDuck();
     isPlaying = true;
-    $("#play-button").remove();
+    $("#play-button").hide();
     initialClouds();
     generateAndCheckCollisionWithCoin();
     generateAndCheckCollisionWithObstacle();
@@ -19,6 +20,17 @@ function endGame() {
   stopGenerateCoins();
   stopGenerateCloud();
   isPlaying = false;
+
+  setTimeout(() => {
+    removeGeneratedImages();
+    $("#play-button").show();
+  }, 2000);
+}
+
+function removeGeneratedImages() {
+  $("img").remove(".cloud");
+  $("img").remove(".coin");
+  $("img").remove(".obstacle");
 }
 
 function loseGame() {

@@ -19,6 +19,18 @@ function jump() {
   }
 }
 
+function initialDuck() {
+  $("#duck").css({
+    width: "50px",
+    height: "50px",
+    position: "absolute",
+    bottom: "10px",
+    left: "50px",
+  });
+  $("#duck").attr("src", "assets/duck_1.png");
+  isJumping = false;
+}
+
 $(document).ready(() => {
   $(document).keydown(function (event) {
     if ((isPlaying && event.key === " ") || event.key === "ArrowUp") {
