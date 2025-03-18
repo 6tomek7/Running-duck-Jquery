@@ -5,10 +5,14 @@ let isPlaying = false;
 
 function startGame() {
   $("#play-button").click(() => {
+    $("#play-button").hide();
     initialDuck();
     setInitalValues();
     isPlaying = true;
-    $("#play-button").hide();
+    $(".top-bar").css({
+      visibility: "visible",
+      opacity: "1",
+    });
     initialClouds();
     generateAndCheckCollisionWithCoin();
     generateAndCheckCollisionWithObstacle();
@@ -25,7 +29,7 @@ function endGame() {
   setTimeout(() => {
     removeGeneratedImages();
     $("#play-button").show();
-  }, 2000);
+  }, 1000);
 }
 
 function setInitalValues() {
